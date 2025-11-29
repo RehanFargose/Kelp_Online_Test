@@ -105,7 +105,7 @@ async function storeInDB(peopleArr) {
             const response = await pool.query("INSERT INTO public.users(name, age, address, additional_info) VALUES($1, $2, $3, $4) RETURNING *",
             [fullName, personAge, JSON.stringify(elem.address), JSON.stringify(elem.additional_info)]);
             
-            console.log("Newly added record:");
+            console.log("Newly added record:",fullName);
             console.log(response.rows);
                
         }
